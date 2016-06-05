@@ -1,0 +1,7 @@
+{
+	"name": "portfolio-site",
+	"version": "1.0.0",
+	"scripts": {
+		"scss": "node-sass --output-style compressed -o dist/styles src/styles.scss"
+	}
+}
