@@ -1,3 +1,7 @@
+/********************
+	Flex positioning
+********************/
+
 @mixin flexbox() {
   display: -webkit-box;
   display: -moz-box;
@@ -15,5 +19,15 @@
 	flex-direction: column;
 }
 
+/******************************
+	General Use Variables
+******************************/
 
+/* Color */
 $l-white: #fff;
+$l-blue: #52b3d9;
+$l-green: #68c3a3;
+
+/* Fonts */
+
+$l-roboto: Roboto;
