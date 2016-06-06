@@ -1,7 +1,16 @@
 {
-	"name": "portfolio-site",
-	"version": "1.0.0",
-	"scripts": {
-		"scss": "node-sass --output-style compressed -o dist/styles src/styles.scss"
-	}
+  "name": "portfolio-site",
+  "version": "1.0.0",
+  "scripts": {
+    "scss": "node-sass --output-style compressed -o dist/styles src/styles.scss",
+    "build:css": "npm run scss",
+    "watch:css": "onchange \"src/*.scss\" -- npm run build:css",
+    "build": "npm run watch:css"
+  },
+  "devDependencies": {
+    "node-sass": "^3.7.0",
+    "onchange": "^2.4.0",
+    "parallelshell": "^2.0.0",
+    "watch": "^0.18.0"
+  }
 }
