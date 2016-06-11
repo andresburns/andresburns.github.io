@@ -124,3 +124,26 @@
 	}
 }
 
+
+.navigation {
+	@include flexbox;
+	justify-content: space-between;
+	align-items: center;
+	min-height: 50px;
+
+	&--grey {
+		color: $l-dark-grey;
+	}
+
+	&--green {
+		color: $l-green;
+	}
+	
+	&--links {
+		a {
+			text-decoration: none;
+			color: $l-dark-grey;
+			margin-right: 15px;;
+		}
+	}
+}

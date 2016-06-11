@@ -15,9 +15,18 @@
 }
 
 #main {
-
+	@include flexbox;
+	@include center-flex;
 }
 
 #footer {
 
+}
+
+.centered {
+	width: 100%;
+
+	@media (min-width: 1200px) {
+		width: 70%;
+	}
 }
