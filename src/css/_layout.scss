@@ -6,7 +6,7 @@
 	@include flex-column;
 
 	height: 100vh;
-	background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url('../../dist/img/hero.jpg') no-repeat;
+	background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url(#{$img-folder}/hero.jpg) no-repeat;
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
@@ -17,6 +17,7 @@
 #main {
 	@include flexbox;
 	@include center-flex;
+	@include flex-column;
 }
 
 #footer {
