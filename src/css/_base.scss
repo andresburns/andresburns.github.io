@@ -37,7 +37,13 @@ h1, h2, h3, h4, h5 {
 
 h1 {font-size: 3rem;}
 h2 {font-size: 2rem;}
-p, a  {font-size: 0.6rem;}
+p, a  {
+	font-size: 0.8rem;
+
+	@media (min-width: 800px) {
+		font-size: 0.66rem;
+	}
+}
 
 
 

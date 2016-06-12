@@ -159,6 +159,7 @@
 	@include flex-column;
 	align-items: center;
 	margin-top: 120px;
+	padding: 20px;
 	color: $l-dark-grey;
 
 	&--title {
@@ -184,10 +185,16 @@
 
 .description {
 	@include flexbox;
+	@include flex-column;
+
+	@media (min-width: 800px) {
+		@include flex-row;
+	}
 }
 
 .personal-data {
-	width: 30%;
+	width: 100%;
+	order: -1;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
 	border: 1px solid $m-light-grey;
@@ -204,9 +211,13 @@
 	}
 
 	&--info {
-		font-size: 0.66rem;
+		font-size: 0.8rem;
 		font-weight: 300;
 		padding: 25px 20px 30px;
+
+		@media (min-width: 800px) {
+			font-size: 0.66rem;
+		}
 
 		li {
 			padding: 7px 0;
@@ -216,12 +227,16 @@
 			}
 		}
 	}
+
+	@media (min-width: 800px) {
+		width: 30%;
+		order: 1;
+	}
 }
 
 .bio {
-	width: 70%;
-	margin-right: 20px;
-
+	width: 100%;
+	
 	&--section:first-child{
 		margin-bottom: 40px;
 	}
@@ -233,5 +248,10 @@
 	&--body {
 		font-weight: 300;
 		line-height: 2;
+	}
+
+	@media (min-width: 800px) {
+		width: 70%;
+		margin-right: 20px;
 	}
 }

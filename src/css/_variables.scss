@@ -19,6 +19,10 @@
 	flex-direction: column;
 }
 
+@mixin flex-row(){
+	flex-direction: row;
+}
+
 /******************************
 	General Use Variables
 ******************************/
