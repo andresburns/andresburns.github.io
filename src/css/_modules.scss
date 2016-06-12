@@ -255,3 +255,76 @@
 		margin-right: 20px;
 	}
 }
+
+.abilities-list {
+	display: inline-block;
+	margin-top: 10px;
+	margin-bottom: 40px;
+	
+	li {
+		font-size: 1rem;
+		line-height: 2;
+		font-weight: 300;
+
+		@media (min-width: 800px) {
+			font-size: 0.75rem;
+			float: left;
+			display: inline-block;
+			width: 50%;
+		}
+	}
+
+	li::before {
+		content: "\f00c";
+		font-family: fontawesome;
+		color: #68c3a3;
+		margin-right: 10px;
+	}
+}
+
+.signature {
+	margin-bottom: 20px;
+
+	img {
+		width: inherit;
+	}
+}
+
+.about-buttons {
+
+	&--btn {
+		display: inline-block;
+		color: white;
+		margin-right: 20px;
+		padding: 14px 20px;
+		border-radius: 4px;
+		font-weight: 700;
+	}
+
+	&--icon {
+		margin-right: 10px,
+	}
+	
+	.msg {
+		background-color: $l-blue;
+
+		&:hover {
+			background-color: $l-dark-blue;
+		}
+	}
+
+	.cv {
+		background-color: $l-green;
+
+		&:hover {
+			background-color: $l-dark-green;
+		}
+	}
+}
+
+.message-btn {
+	
+
+	
+
+}
