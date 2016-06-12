@@ -210,7 +210,10 @@
 
 		li {
 			padding: 7px 0;
-			border-bottom: 1px solid $m-light-grey;
+
+			&:not(:last-child) {
+				border-bottom: 1px solid $m-light-grey;
+			}
 		}
 	}
 }
@@ -218,6 +221,10 @@
 .bio {
 	width: 70%;
 	margin-right: 20px;
+
+	&--section:first-child{
+		margin-bottom: 40px;
+	}
 
 	&--title {
 		margin-bottom: 30px;
