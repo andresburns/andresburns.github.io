@@ -1,4 +1,24 @@
+/***********************
+	SINGLE COMPONENTS
+***********************/
 
+@mixin section-title(){
+	position: relative;
+	color: $m-dark-blue;
+	margin-bottom: 80px;
+	
+	&:after {
+		content: "";
+		background: url(#{$img-folder}/divider.png) no-repeat 0 0;
+		height: 15px;
+		width: 113px;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: -40px;
+		margin: 0 auto;
+	}
+}
 
 /********************
 	Header Modules
@@ -163,21 +183,7 @@
 	color: $l-dark-grey;
 
 	&--title {
-		position: relative;
-		color: $m-dark-blue;
-		margin-bottom: 80px;
-		
-		&:after {
-			content: "";
-			background: url(#{$img-folder}/divider.png) no-repeat 0 0;
-			height: 15px;
-			width: 113px;
-			position: absolute;
-			left: 0;
-			right: 0;
-			bottom: -40px;
-			margin: 0 auto;
-		}
+		@include section-title;
 	}
 }
 
@@ -186,6 +192,7 @@
 .description {
 	@include flexbox;
 	@include flex-column;
+	margin-bottom: 50px;
 
 	@media (min-width: 800px) {
 		@include flex-row;
@@ -322,9 +329,23 @@
 	}
 }
 
-.message-btn {
-	
-
-	
-
+.banner {
+	width: 100%;
+	min-height: 300px;
+	background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(#{$img-folder}/board.jpg) no-repeat center center;
+	background-size: cover;
+	position: relative;
 }
+
+.resume {
+	@include flexbox;
+	@include flex-column;
+	align-items: center;
+	margin-top: 120px;
+
+	&--title {
+		@include section-title;
+	}
+}
+
+
