@@ -1,0 +1,23 @@
+@import "variables";
+
+@mixin triangle-hover($direction) {
+	@if $direction == left {
+		border-left: 12px solid $l-green;
+	}
+	@else {
+		border-right: 12px solid $l-green;
+	}
+	
+}
+
+.card:nth-child(even) {
+	.card--content:hover:after {
+		@include triangle-hover(right);
+	}
+}
+
+.card:nth-child(odd) {
+	.card--content:hover:after {
+		@include triangle-hover(left);
+	}
+}

@@ -20,6 +20,46 @@
 	}
 }
 
+@mixin triangle($direction:left, $color: $m-light-grey) {
+	content: "";
+	top: 25px;
+	position: absolute;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	@if $direction == left {
+		left: 100%;
+		border-left: 12px solid $color;
+	}
+	@else {
+		right: 100%;
+		border-right: 12px solid $color;
+	}
+}
+
+@mixin triangle-hover($direction) {
+	@if $direction == left {
+		border-left: 12px solid $l-green;
+	}
+	@else {
+		border-right: 12px solid $l-green;
+	}
+	
+}
+
+@mixin card-title($orientation) {
+	margin-top: 25px;
+	position: absolute;
+	background-color: $l-white;
+	@if $orientation == right {
+		order: -1;
+		margin-left: -135px;
+	}
+	@else {
+		margin-left: 70px;
+	}
+
+}
+
 /********************
 	Header Modules
 ********************/
@@ -346,6 +386,94 @@
 	&--title {
 		@include section-title;
 	}
+
+	&--subtitle {
+		margin-bottom: 20px;
+	}
 }
+
+.timeline {
+	@include flexbox;
+	width: 100%;
+
+	&:before {
+		content: "";
+		width: 10px;
+		height: 10px;
+		left: 50%;
+		position: absolute;
+		transform: rotate(45deg);
+		background-color: $m-timeline-grey;
+	}
+
+	&--list {
+		@include flexbox;
+		@include flex-column;
+		position: relative;
+		width: 100%;
+		&:before {
+			content: "";
+			top: 0;
+			bottom: 0;
+			width: 2px;
+			background-color:$m-timeline-grey;
+			position: absolute;
+			left: 50%;
+			margin-left: 4px;
+		}
+	}
+}
+
+.card {
+	@include flexbox;
+	margin-bottom: 40px;
+
+	&:nth-child(even) {
+		justify-content: flex-end;
+		.card--content:after {
+			@include triangle(right, $l-white);
+		}
+		.card--content:before {
+			@include triangle(right, $m-light-grey);
+			margin-left: 1px;
+		}
+
+		.card--date {
+			@include card-title(right);
+		}
+	}
+
+	&:nth-child(odd) {
+		.card--content:after {
+			@include triangle(left, $l-white);
+		}
+		.card--content:before {
+			@include triangle(left, $m-light-grey);
+			margin-left: 1px;
+		}
+
+		.card--date {
+			@include card-title(left);
+		}
+	}
+
+	&--content {
+		position: relative;
+		width: 41%;
+		margin-right: 17px;
+		padding: 20px;
+		border: 1px solid $m-light-grey;
+		text-align: right;
+	}
+
+	&--content:hover {
+		background-color: $l-green;
+		border-color: $l-green;
+		color: white;
+	}
+}
+
+
+
 
 
