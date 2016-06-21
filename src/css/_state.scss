@@ -1,6 +1,7 @@
 @import "variables";
 
 @mixin triangle-hover($direction) {
+	transition: all 400ms;
 	@if $direction == left {
 		border-left: 12px solid $l-green;
 	}
