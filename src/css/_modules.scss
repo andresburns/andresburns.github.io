@@ -386,6 +386,7 @@
 
 .timeline {
 	@include flexbox;
+	position: relative;
 	width: 100%;
 	padding: 10px;
 
@@ -397,6 +398,17 @@
 		transform: rotate(45deg);
 		background-color: $m-timeline-grey;
 		left: 6px;
+	}
+
+	&:after {
+		content: "";
+		width: 10px;
+		height: 10px;
+		position: absolute;
+		transform: rotate(45deg);
+		background-color: $m-timeline-grey;
+		left: 6px;
+    	bottom: 0px;
 	}
 
 	&--list {
@@ -417,9 +429,16 @@
 
 	@media (min-width: 800px) {
 		padding: 0;
+		margin-bottom: 40px;
 
 		&:before {
 			left: 50%;
+			margin-left: -4px;
+		}
+
+		&:after {
+			left: 50%;
+			margin-left: -4px;
 		}
 
 		&--list {
@@ -485,7 +504,7 @@
 			order: 0;
 			font-size: 0.75rem;
 			text-align:center;
-			margin: 25px 0 0 -58px;
+			margin: 20px 0 0 -58px;
 			left: 50%;
 			width: 120px;
 		}
