@@ -374,6 +374,7 @@
 	@include flex-column;
 	align-items: center;
 	margin-top: 120px;
+	margin-bottom: 40px;
 
 	&--title {
 		@include section-title;
@@ -525,6 +526,74 @@
 		}
 	}
 }
+
+.skills {
+	@include flexbox;
+	@include flex-column;
+	background-color: $m-skills-black;
+	width: 100%;
+	padding-top: 120px;
+	padding-bottom: 80px;
+	&--title {
+		@include section-title;
+		color: $l-white;
+		text-align: center;
+	}
+
+	&--list {
+		@include flexbox;
+		@include flex-column;
+		flex-wrap: wrap;
+		margin: auto;
+
+		@media (min-width: 800px) {
+			flex-direction: row;
+		}
+	}
+}
+
+.skill {
+	@include flexbox;
+	@include center-flex;
+	width: 100%;
+	margin-bottom: 30px;
+	&--title {
+		color: $l-white;
+		font-size: 1rem;
+		width: 25%;
+		margin-right: 10px;
+	}
+
+	@media (min-width: 800px){
+		width: 50%;
+	}
+
+	&--progress {
+		width: 400px;
+		height: 10px;
+		background-color: $m-skills-bar-black;
+		border-radius: 3px;
+
+	}
+
+	&--bar {
+		background-color: $l-green;
+		border-radius: 3px 0 0 3px;
+		height:100%;
+		width: 90%;
+		animation: progress-bar 2s;
+	}
+}
+
+.works {
+	@include section-title;
+	@include flexbox;
+	@include flex-column;
+	align-items: center;
+	margin-top: 120px;
+}
+
+
 
 
 

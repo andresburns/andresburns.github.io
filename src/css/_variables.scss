@@ -37,6 +37,8 @@ $l-dark-grey: #282828;
 $m-light-grey: #eee;
 $m-dark-blue: #2c3e50;
 $m-timeline-grey: #e1e1e1;
+$m-skills-black: #1a1e23;
+$m-skills-bar-black: #3a4149;
 
 
 /* Fonts */
@@ -48,3 +50,7 @@ $l-roboto: Roboto;
 
 	/* img */
 	$img-folder: "../../dist/img";
+
+@keyframes progress-bar {
+  0% {width: 0;}
+}
