@@ -587,11 +587,15 @@
 }
 
 .works {
-	@include section-title;
+	
 	@include flexbox;
 	@include flex-column;
 	align-items: center;
 	margin-top: 120px;
+
+	&--title {
+		@include section-title;
+	}
 }
 
 
@@ -603,6 +607,7 @@
 		flex-basis: 25%;
 		@include flexbox;
 		position: relative;
+		overflow-y: hidden;
 	}
 
 	&--item:hover {
