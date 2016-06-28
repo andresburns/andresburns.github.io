@@ -7053,6 +7053,7 @@ th {
   flex-direction: column;
   align-items: center;
   margin-top: 120px;
+  margin-bottom: 80px;
 }
 
 .works--title {
@@ -7148,6 +7149,103 @@ th {
   z-index: 1;
 }
 
+.available {
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(to top, #68c3a3, rgba(104, 195, 163, 0.7)), url(../../dist/img/available.jpg) no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
+  color: #fff;
+}
+
+.available--title {
+  margin-bottom: 40px;
+}
+
+.available--button {
+  color: #fff;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 15px 60px;
+  transition: all 400ms;
+}
+
+.available--button:hover {
+  background-color: #fff;
+  color: #68c3a3;
+}
+
+.contact {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contact--title {
+  position: relative;
+  color: #2c3e50;
+  margin-bottom: 80px;
+}
+
+.contact--title:after {
+  content: "";
+  background: url(../../dist/img/divider.png) no-repeat 0 0;
+  height: 15px;
+  width: 113px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -40px;
+  margin: 0 auto;
+}
+
+.contact--form {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact--label {
+  text-align: left;
+  font-size: 0.6rem;
+  color: #282828;
+  margin-bottom: 10px;
+}
+
+.contact--input {
+  width: 100%;
+  background-color: #f7f7f7;
+  border: 1px solid #e8e8e8;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.contact--input:focus {
+  transition: all 400ms;
+  outline: none;
+  border: 1px solid #68c3a3;
+}
+
 /********************
 	Flex positioning
 ********************/
@@ -7240,4 +7338,8 @@ p, a, li {
 
 a {
   text-decoration: none;
+}
+
+textarea {
+  resize: none;
 }
