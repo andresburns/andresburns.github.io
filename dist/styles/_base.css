@@ -6531,6 +6531,8 @@ th {
   width: 100%;
   min-height: 50px;
   border-bottom: 2px solid #eee;
+  background-color: #fff;
+  z-index: 2;
 }
 
 .navigation--container {
@@ -6995,6 +6997,7 @@ th {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  width: 100%;
   margin: auto;
 }
 
@@ -7130,6 +7133,7 @@ th {
   background-color: #68c3a3;
   color: #fff;
   bottom: -100%;
+  transition: all 400ms;
 }
 
 .portfolio--link {
@@ -7193,6 +7197,7 @@ th {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 80px;
 }
 
 .contact--title {
@@ -7223,6 +7228,7 @@ th {
   align-items: center;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
 }
 
 .contact--label {
@@ -7238,12 +7244,29 @@ th {
   border: 1px solid #e8e8e8;
   padding: 10px;
   margin-bottom: 20px;
+  font-size: 0.6rem;
+  color: #555;
 }
 
 .contact--input:focus {
   transition: all 400ms;
   outline: none;
   border: 1px solid #68c3a3;
+}
+
+.contact--button {
+  background-color: #68c3a3;
+  color: white;
+  font-weight: 700;
+  padding: 14px 20px;
+  border-radius: 4px;
+  font-size: 0.66rem;
+  border: none;
+  outline: none;
+}
+
+.contact--button:active {
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 
 /********************
@@ -7262,6 +7285,25 @@ th {
   }
 }
 
+.visible-nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.visible-nav a {
+  padding: 10px 15px;
+}
+
+.invisible-nav {
+  display: none;
+}
+
+.fixed {
+  top: 0;
+  position: fixed;
+}
+
 .card:nth-child(even) .card--content:hover:after {
   transition: all 400ms;
   border-right: 12px solid #68c3a3;
@@ -7270,6 +7312,30 @@ th {
 .card:nth-child(odd) .card--content:hover:after {
   transition: all 400ms;
   border-left: 12px solid #68c3a3;
+}
+
+.navigation--container {
+  flex-wrap: wrap;
+}
+
+.navigation--name {
+  padding: 10px 15px;
+}
+
+.navigation--responsive {
+  margin-right: 15px;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  .navigation--responsive {
+    display: none;
+  }
+  .navigation--links {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+  }
 }
 
 /********************

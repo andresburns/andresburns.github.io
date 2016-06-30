@@ -8,7 +8,24 @@
 	@else {
 		border-right: 12px solid $l-green;
 	}
-	
+}
+
+.visible-nav {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	a {
+		padding: 10px 15px;
+	}
+}
+
+.invisible-nav {
+	display: none;
+}
+
+.fixed {
+	top: 0;
+	position: fixed;
 }
 
 .card:nth-child(even) {
@@ -21,4 +38,34 @@
 	.card--content:hover:after {
 		@include triangle-hover(left);
 	}
+}
+
+.navigation {
+
+	&--container {
+		flex-wrap: wrap;
+	}
+
+	&--name {
+		padding: 10px 15px;
+	}
+
+	&--responsive {
+		margin-right: 15px;
+		font-size: 1.2rem;
+	}
+	
+	@media (min-width: 768px) {
+
+		&--responsive {
+			display: none;
+		}
+
+		&--links {
+			display: flex;
+			flex-direction: row;
+			width: auto;
+		}
+
+	}	
 }

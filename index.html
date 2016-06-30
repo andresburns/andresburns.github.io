@@ -34,8 +34,9 @@
 	<main id="main">
 		<header class="navigation">
 			<div class="centered navigation--container">
-				<h3><span class="navigation--grey">Carlos</span> <span class="navigation--green">Rengifo</span></h3>
-				<nav class="navigation--links">
+				<h3 class="navigation--name"><span class="navigation--grey">Carlos</span> <span class="navigation--green">Rengifo</span></h3>
+				<span id="toggle-responsive" class="navigation--responsive"><i class="fa fa-bars"></i></span>
+				<nav id="nav-links" class="navigation--links invisible-nav">
 					<a href=""><strong>HOME</strong></a>
 					<a href=""><strong>ABOUT</strong></a>
 					<a href=""><strong>RESUME</strong></a>
@@ -209,13 +210,12 @@
 				<input class="contact--input" type="text" name="subject">
 				<label class="contact--label" for="message"><strong>Message</strong></label>
 				<textarea class="contact--input" name="message" cols="30" rows="10"></textarea>
+				<button class="button contact--button" type="submit">SEND MESSAGE</button>
 			</form>
 		</section>
 	</main>
 	<footer>
-		
 	</footer id="footer">
-	<script type="text/javascript" src="dist/scripts/jquery-3.0.0.min.js"></script>
-	<script type="text/javascript" src="dist/scripts/custom.js"></script>
+	<script type="text/javascript" src="dist/scripts/scripts.js"></script>
 </body>
 </html>
