@@ -66,6 +66,10 @@
 			flex-direction: row;
 			width: auto;
 		}
-
 	}	
+}
+
+.active-link {
+	color: $l-green !important;
+	transition: all 400ms;
 }

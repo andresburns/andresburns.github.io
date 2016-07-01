@@ -7338,6 +7338,11 @@ th {
   }
 }
 
+.active-link {
+  color: #68c3a3 !important;
+  transition: all 400ms;
+}
+
 /********************
 	Flex positioning
 ********************/

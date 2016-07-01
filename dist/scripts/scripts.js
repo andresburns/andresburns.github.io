@@ -10927,16 +10927,6 @@ var scripts = (function() {
 		navLinks.toggleClass('visible-nav invisible-nav');
 	})
 
-	/*var inview = new Waypoint.Inview({
-		element: $('.about')[0],
-		enter: function(direction) {
-			console.log("i have entered");
-		},
-		exited: function(direction) {
-			console.log("I have wxited");
-		}
-	});*/
-
 	navLinks.find('a').on("click", function(event) {
 		event.preventDefault();
 		var link = $(this);
@@ -10946,5 +10936,35 @@ var scripts = (function() {
 		}, 800);
 	});
 
+	/*$('.waypoint').each(function(index) {
+		var inview = new Waypoint.Inview({
+			element: $(this)[0],
+			enter: function(direction) {
+				navLinks.find('.active-link').removeClass("active-link");
+				section = this.element.id;
+				selector = "a[href='" + "#" + section + "']";
+				navLinks.find(selector).addClass("active-link");
+
+			},
+			exited: function(direction) {
+				section = this.element.id;
+				selector = "a[href='" + "#" + section + "']";
+				navLinks.find(selector).removeClass("active-link");
+			}
+		});
+	})*/
+
+	$('.waypoint').each(function(index) {
+		var waypoint = new Waypoint({
+			element: $(this)[0],
+			handler: function(direction) {
+				navLinks.find('.active-link').removeClass("active-link");
+				section = this.element.id;
+				selector = "a[href='" + "#" + section + "']";
+				navLinks.find(selector).addClass("active-link");
+			},
+			offset: "30%"
+		})
+	})
 })();
 },{"jquery":1,"waypoints/lib/noframework.waypoints.js":2,"waypoints/src/shortcuts/inview.js":3}]},{},[4]);
