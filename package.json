@@ -16,6 +16,7 @@
     "npm-run-all": "^2.3.0",
     "onchange": "^2.4.0",
     "watch": "^0.18.0",
-    "watchify": "^3.7.0"
+    "watchify": "^3.7.0",
+    "waypoints": "^4.0.0"
   }
 }
