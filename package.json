@@ -2,7 +2,7 @@
   "name": "portfolio-site",
   "version": "1.0.0",
   "scripts": {
-    "scss": "node-sass --output-style expanded -o dist/styles src/css/_base.scss",
+    "scss": "node-sass --output-style expanded -o dist/styles src/css/base.scss",
     "build:css": "npm run scss",
     "watch:css": "onchange \"src/css/*.scss\" -- npm run build:css",
     "build:js": "browserify ./src/js/scripts.js -o ./dist/scripts/scripts.js",
