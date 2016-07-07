@@ -1,6 +1,5 @@
 var $ = require('jquery');
 require('waypoints/lib/noframework.waypoints.js');
-require('waypoints/src/shortcuts/inview.js');
 
 
 
@@ -17,15 +16,19 @@ var scripts = (function() {
 	navLinks = navbar.find('#nav-links');
 
 	// Events
+	new WOW().init();
 	browser.on("scroll", function() {
 		var hasScrolled = browser.scrollTop();
 		header.innerHeight() <= hasScrolled ? navbar.addClass("fixed") : navbar.removeClass("fixed")
 	});
 
+
+	// Toogle hamburger menu when clicked
 	responsiveNav.on("click", function() {
 		navLinks.toggleClass('visible-nav invisible-nav');
 	})
 
+	//Navigate the user to a section of the page when he clicks on its associated navbar link
 	navLinks.find('a').on("click", function(event) {
 		event.preventDefault();
 		var link = $(this);
@@ -35,24 +38,7 @@ var scripts = (function() {
 		}, 800);
 	});
 
-	/*$('.waypoint').each(function(index) {
-		var inview = new Waypoint.Inview({
-			element: $(this)[0],
-			enter: function(direction) {
-				navLinks.find('.active-link').removeClass("active-link");
-				section = this.element.id;
-				selector = "a[href='" + "#" + section + "']";
-				navLinks.find(selector).addClass("active-link");
-
-			},
-			exited: function(direction) {
-				section = this.element.id;
-				selector = "a[href='" + "#" + section + "']";
-				navLinks.find(selector).removeClass("active-link");
-			}
-		});
-	})*/
-
+	// Create waypoints for every major section of the site
 	$('.waypoint').each(function(index) {
 		var waypoint = new Waypoint({
 			element: $(this)[0],
@@ -64,5 +50,10 @@ var scripts = (function() {
 			},
 			offset: "30%"
 		})
+	})
+
+	//Animations for progress bars 
+	body.find('.skill--bar').each(function(index) {
+		$(this).width($(this).data('width'));
 	})
 })();

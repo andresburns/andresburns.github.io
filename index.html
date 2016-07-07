@@ -10,6 +10,7 @@
 
 	  <!-- Load CSS -->
 	  <link rel="stylesheet" type="text/css" href="dist/styles/_base.css">
+	  <link rel="stylesheet" type="text/css" href="dist/styles/animate.css">
 </head>
 <body>
 	<header id="header" class="waypoint">
@@ -47,17 +48,17 @@
 			</div>
 		</header>
 		<section id="about" class="waypoint about centered">
-			<h2 class="about--title">ABOUT ME</h2>
+			<h2 class="about--title wow fadeInUp">ABOUT ME</h2>
 			<div class="description">
 				<article class="description--bio bio">
 					<section class="bio--section">
-						<h3 class="bio--title">OBJECTIVE</h3>
-						<p class="bio--body">An opportunity to work and upgrade oneself, as well as being involved in an organization that believes in gaining a competitive edge and giving back to the community. I'm presently expanding my solid experience in UI / UX design. I focus on using my interpersonal skills to build good user experience and create a strong interest in my employers. I hope to develop skills in motion design and my knowledge of the Web, and become an honest asset to the business. As an individual, I'm self-confident you’ll find me creative, funny and naturally passionate. I’m a forward thinker, which others may find inspiring when working as a team.</p>
+						<h3 class="bio--title wow fadeInUp">OBJECTIVE</h3>
+						<p class="bio--body wow fadeInUp">An opportunity to work and upgrade oneself, as well as being involved in an organization that believes in gaining a competitive edge and giving back to the community. I'm presently expanding my solid experience in UI / UX design. I focus on using my interpersonal skills to build good user experience and create a strong interest in my employers. I hope to develop skills in motion design and my knowledge of the Web, and become an honest asset to the business. As an individual, I'm self-confident you’ll find me creative, funny and naturally passionate. I’m a forward thinker, which others may find inspiring when working as a team.</p>
 					</section>
-					<section class="bio--section">
+					<section class="bio--section wow fadeInUp">
 						<h3 class="bio--title">WHAT I DO</h3>
 						<p class="bio--body">I have been working as a web interface designer since. I have a love of clean, elegant styling, and I have lots of experience in the production of CSS3 and HTML5 for modern websites. I loving creating awesome as per my clients’ need. I think user experience when I try to craft something for my clients. Making a design awesome.</p>
-						<ul class="abilities-list">
+						<ul class="abilities-list wow fadeInUp">
 							<li>Frontend development</li>
 							<li>Backend development</li>
 							<li>Server Administration</li>
@@ -92,11 +93,11 @@
 		</section>
 		<div class="banner"></div>
 		<section id="resume" class="waypoint resume centered">
-			<h2 class="resume--title">RESUME</h2>
-			<h3 class="resume--subtitle">EDUCATION</h3>
+			<h2 class="resume--title wow fadeInUp">RESUME</h2>
+			<h3 class="resume--subtitle wow fadeInUp">EDUCATION</h3>
 			<section class="timeline">
 				<ul class="timeline--list ">
-					<li class="timeline--item card animated fadeInUp">
+					<li class="timeline--item card wow fadeInUp">
 						<div class="card--content">
 							<h3>HIGHER SECONDARY CERTIFICATE</h3>
                        		<span>Typography Arts, FA College, New York, USA</span>
@@ -104,7 +105,7 @@
 						</div>
 						<p class="card--date">2007-2011</p>
 					</li>
-					<li class="timeline--item card">
+					<li class="timeline--item card wow fadeInUp">
 						<div class="card--content">
 							<h3>Bachelor degree certificate</h3>
                        		<span>BA(Hons) in UI Engineering, Arts University, Pabna, USA</span>
@@ -117,7 +118,7 @@
 			<h3 class="resume--subtitle">EXPERIENCE</h3>
 			<section class="timeline">
 				<ul class="timeline--list ">
-					<li class="timeline--item card animated fadeInUp">
+					<li class="timeline--item card wow fadeInUp">
 						<div class="card--content">
 							<h3>HIGHER SECONDARY CERTIFICATE</h3>
                        		<span>Typography Arts, FA College, New York, USA</span>
@@ -125,7 +126,7 @@
 						</div>
 						<p class="card--date">2007-2011</p>
 					</li>
-					<li class="timeline--item card">
+					<li class="timeline--item card wow fadeInUp">
 						<div class="card--content">
 							<h3>Bachelor degree certificate</h3>
                        		<span>BA(Hons) in UI Engineering, Arts University, Pabna, USA</span>
@@ -137,7 +138,7 @@
 			</section>
 		</section>
 		<section id="skills" class="waypoint skills">
-			<h2 class="skills--title">SKILLS</h2>
+			<h2 class="skills--title wow fadeInUp">SKILLS</h2>
 			<section class="skills--list">
 				<article class="skill">
 					<h3 class="skill--title">UX Design</h3>
@@ -148,7 +149,7 @@
 				<article class="skill">
 					<h3 class="skill--title">Visual Design</h3>
 					<div class="skill--progress">
-						<div class="skill--bar"></div>
+						<div data-width="50%" class="skill--bar"></div>
 					</div>
 				</article>
 				<article class="skill">
@@ -178,7 +179,7 @@
 			</section>
 		</section>
 		<section id="works" class="waypoint works centered">
-			<h2 class="works--title">WORKS</h2>
+			<h2 class="works--title wow fadeInUp">WORKS</h2>
 			<section class="portfolio">
 				<article class="portfolio--item ">
 					<div class="portfolio--thumbnail">
@@ -200,8 +201,8 @@
 			<a class="available--button" href="#"><strong>CONTACT ME</strong></a>
 		</div>
 		<section id="contact" class="waypoint contact centered">
-			<h2 class="contact--title">GET IN TOUCH</h2>
-			<form action="" class="contact--form">
+			<h2 class="contact--title wow fadeInUp">GET IN TOUCH</h2>
+			<form method="POST" action="https://formspree.io/carlosandrex@gmail.com" class="contact--form">
 				<label class="contact--label" for="name"><strong>Name</strong></label>
 				<input class="contact--input" type="text" name="name">
 				<label class="contact--label" for="email"><strong>Email</strong></label>
@@ -216,6 +217,8 @@
 	</main>
 	<footer>
 	</footer id="footer">
+	<script type="text/javascript" src="dist/scripts/wow.min.js"></script>
 	<script type="text/javascript" src="dist/scripts/scripts.js"></script>
+
 </body>
 </html>

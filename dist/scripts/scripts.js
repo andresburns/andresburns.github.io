@@ -10784,124 +10784,8 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
 }())
 ;
 },{}],3:[function(require,module,exports){
-(function() {
-  'use strict'
-
-  function noop() {}
-
-  var Waypoint = window.Waypoint
-
-  /* http://imakewebthings.com/waypoints/shortcuts/inview */
-  function Inview(options) {
-    this.options = Waypoint.Adapter.extend({}, Inview.defaults, options)
-    this.axis = this.options.horizontal ? 'horizontal' : 'vertical'
-    this.waypoints = []
-    this.element = this.options.element
-    this.createWaypoints()
-  }
-
-  /* Private */
-  Inview.prototype.createWaypoints = function() {
-    var configs = {
-      vertical: [{
-        down: 'enter',
-        up: 'exited',
-        offset: '100%'
-      }, {
-        down: 'entered',
-        up: 'exit',
-        offset: 'bottom-in-view'
-      }, {
-        down: 'exit',
-        up: 'entered',
-        offset: 0
-      }, {
-        down: 'exited',
-        up: 'enter',
-        offset: function() {
-          return -this.adapter.outerHeight()
-        }
-      }],
-      horizontal: [{
-        right: 'enter',
-        left: 'exited',
-        offset: '100%'
-      }, {
-        right: 'entered',
-        left: 'exit',
-        offset: 'right-in-view'
-      }, {
-        right: 'exit',
-        left: 'entered',
-        offset: 0
-      }, {
-        right: 'exited',
-        left: 'enter',
-        offset: function() {
-          return -this.adapter.outerWidth()
-        }
-      }]
-    }
-
-    for (var i = 0, end = configs[this.axis].length; i < end; i++) {
-      var config = configs[this.axis][i]
-      this.createWaypoint(config)
-    }
-  }
-
-  /* Private */
-  Inview.prototype.createWaypoint = function(config) {
-    var self = this
-    this.waypoints.push(new Waypoint({
-      context: this.options.context,
-      element: this.options.element,
-      enabled: this.options.enabled,
-      handler: (function(config) {
-        return function(direction) {
-          self.options[config[direction]].call(self, direction)
-        }
-      }(config)),
-      offset: config.offset,
-      horizontal: this.options.horizontal
-    }))
-  }
-
-  /* Public */
-  Inview.prototype.destroy = function() {
-    for (var i = 0, end = this.waypoints.length; i < end; i++) {
-      this.waypoints[i].destroy()
-    }
-    this.waypoints = []
-  }
-
-  Inview.prototype.disable = function() {
-    for (var i = 0, end = this.waypoints.length; i < end; i++) {
-      this.waypoints[i].disable()
-    }
-  }
-
-  Inview.prototype.enable = function() {
-    for (var i = 0, end = this.waypoints.length; i < end; i++) {
-      this.waypoints[i].enable()
-    }
-  }
-
-  Inview.defaults = {
-    context: window,
-    enabled: true,
-    enter: noop,
-    entered: noop,
-    exit: noop,
-    exited: noop
-  }
-
-  Waypoint.Inview = Inview
-}())
-
-},{}],4:[function(require,module,exports){
 var $ = require('jquery');
 require('waypoints/lib/noframework.waypoints.js');
-require('waypoints/src/shortcuts/inview.js');
 
 
 
@@ -10918,15 +10802,19 @@ var scripts = (function() {
 	navLinks = navbar.find('#nav-links');
 
 	// Events
+	new WOW().init();
 	browser.on("scroll", function() {
 		var hasScrolled = browser.scrollTop();
 		header.innerHeight() <= hasScrolled ? navbar.addClass("fixed") : navbar.removeClass("fixed")
 	});
 
+
+	// Toogle hamburger menu when clicked
 	responsiveNav.on("click", function() {
 		navLinks.toggleClass('visible-nav invisible-nav');
 	})
 
+	//Navigate the user to a section of the page when he clicks on its associated navbar link
 	navLinks.find('a').on("click", function(event) {
 		event.preventDefault();
 		var link = $(this);
@@ -10936,24 +10824,7 @@ var scripts = (function() {
 		}, 800);
 	});
 
-	/*$('.waypoint').each(function(index) {
-		var inview = new Waypoint.Inview({
-			element: $(this)[0],
-			enter: function(direction) {
-				navLinks.find('.active-link').removeClass("active-link");
-				section = this.element.id;
-				selector = "a[href='" + "#" + section + "']";
-				navLinks.find(selector).addClass("active-link");
-
-			},
-			exited: function(direction) {
-				section = this.element.id;
-				selector = "a[href='" + "#" + section + "']";
-				navLinks.find(selector).removeClass("active-link");
-			}
-		});
-	})*/
-
+	// Create waypoints for every major section of the site
 	$('.waypoint').each(function(index) {
 		var waypoint = new Waypoint({
 			element: $(this)[0],
@@ -10966,5 +10837,10 @@ var scripts = (function() {
 			offset: "30%"
 		})
 	})
+
+	//Animations for progress bars 
+	body.find('.skill--bar').each(function(index) {
+		$(this).width($(this).data('width'));
+	})
 })();
-},{"jquery":1,"waypoints/lib/noframework.waypoints.js":2,"waypoints/src/shortcuts/inview.js":3}]},{},[4]);
+},{"jquery":1,"waypoints/lib/noframework.waypoints.js":2}]},{},[3]);

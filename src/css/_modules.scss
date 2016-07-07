@@ -337,7 +337,7 @@
 	&--btn {
 		display: inline-block;
 		color: white;
-		margin-right: 20px;
+		margin: 0 20px 20px;
 		padding: 14px 20px;
 		border-radius: 4px;
 		font-weight: 700;
@@ -549,6 +549,7 @@
 		flex-wrap: wrap;
 		width: 100%;
 		margin: auto;
+		padding: 20px;
 
 		@media (min-width: 800px) {
 			flex-direction: row;
@@ -585,7 +586,7 @@
 		border-radius: 3px 0 0 3px;
 		height:100%;
 		width: 90%;
-		animation: progress-bar 2s;
+		//animation: progress-bar 2s;
 	}
 }
 
@@ -605,10 +606,15 @@
 
 .portfolio {
 	@include flexbox;
-	width: 100%;
+	width: 95%;
+
+	@media (min-width: 800px) {
+		&--item {
+			flex-basis: 25%;
+		}
+	}
 
 	&--item {
-		flex-basis: 25%;
 		@include flexbox;
 		position: relative;
 		overflow-y: hidden;
@@ -721,7 +727,11 @@
 		@include center-flex;
 		@include flex-column;
 		align-items: flex-start;
-		width: 100%;
+		width: 90%;
+
+		@media (min-width: 800px) {
+			width: 100%;
+		}
 	}
 
 	&--label {
