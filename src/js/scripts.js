@@ -2,6 +2,7 @@ var $ = require('jquery');
 require('waypoints/lib/noframework.waypoints.js');
 require('sweetalert');
 
+
 var scripts = (function() {
 	
 	// Define DOM variables
