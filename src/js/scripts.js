@@ -56,7 +56,7 @@ var scripts = (function() {
 	});
 
 	// Event for contact form
-	body.find('#contact-form').submit(function(event) {
+	/*body.find('#contact-form').submit(function(event) {
 		event.preventDefault();
 		form = $(this).serializeArray();
 		$.ajax({
@@ -82,5 +82,5 @@ var scripts = (function() {
 			});
 		});
 		
-	})
+	})*/
 })();
