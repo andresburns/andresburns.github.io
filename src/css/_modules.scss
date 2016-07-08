@@ -534,6 +534,7 @@
 	@include flexbox;
 	@include flex-column;
 	background-color: $m-skills-black;
+	align-items: center;
 	width: 100%;
 	padding-top: 120px;
 	padding-bottom: 80px;
@@ -563,12 +564,24 @@
 	@include flex-column;
 	width: 100%;
 	margin-bottom: 30px;
+	text-align: center;
+
+	&--title {
+		color: $l-white;
+		font-size: 1rem;
+		width: 100%;
+	}
+
+	&--preferred {
+		font-weight: 700;
+		color: $l-green;
+	}
+
 
 	@media(min-width: 800px) {
 		flex-direction: row;
 		width: 50%;
 		&--title {
-			width: 25%;
 			margin-right: 10px;
 			margin-left: 40px;
 		}
@@ -577,11 +590,7 @@
 			width: 400px;
 		}
 	}
-	&--title {
-		color: $l-white;
-		font-size: 1rem;
-		width: 100%;
-	}
+	
 
 	&--progress {
 		width: 100%;

@@ -50,10 +50,6 @@ var scripts = (function() {
 		})
 	})
 
-	// Animations for progress bars 
-	body.find('.skill--bar').each(function(index) {
-		$(this).width($(this).data('width'));
-	});
 
 	// Event for contact form
 	body.find('#contact-form').submit(function(event) {
