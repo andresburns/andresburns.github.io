@@ -12044,13 +12044,6 @@ var $ = require('jquery');
 require('waypoints/lib/noframework.waypoints.js');
 require('sweetalert');
 
-
-swal({
-				title: "Ups!",
-				text: "Something went wrong, did you use a valid email?",
-				type: "warning",
-				confirmButtonColor: "#68c3a3"
-			});
 var scripts = (function() {
 	
 	// Define DOM variables
