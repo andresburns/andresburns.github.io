@@ -73,7 +73,7 @@ var scripts = (function() {
 				confirmButtonColor: "#68c3a3"
 			});
 		})
-		.success(function() {
+		.done(function() {
 			swal({
 				title: "Message received!",
 				text: "Thank you for contacting me, I will answer you shortly!",
