@@ -5,6 +5,7 @@
      * 2. Prevent iOS and IE text size adjust after device orientation change,
      *    without disabling user zoom.
      */
+@import url(../../node_modules/sweetalert/dist/sweetalert.css);
 html {
   font-family: sans-serif;
   /* 1 */

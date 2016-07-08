@@ -1,10 +1,14 @@
 var $ = require('jquery');
 require('waypoints/lib/noframework.waypoints.js');
+require('sweetalert');
 
 
-
-
-
+swal({
+				title: "Ups!",
+				text: "Something went wrong, did you use a valid email?",
+				type: "warning",
+				confirmButtonColor: "#68c3a3"
+			});
 var scripts = (function() {
 	
 	// Define DOM variables
@@ -52,8 +56,37 @@ var scripts = (function() {
 		})
 	})
 
-	//Animations for progress bars 
+	// Animations for progress bars 
 	body.find('.skill--bar').each(function(index) {
 		$(this).width($(this).data('width'));
+	});
+
+	// Event for contact form
+	body.find('#contact-form').submit(function(event) {
+		event.preventDefault();
+		form = $(this).serializeArray();
+		$.ajax({
+			url: "https://formspree.io/carlosandrex@gmail.com",
+			type: "POST",
+			dataType: "json",
+			data: form
+		})
+		.fail(function() {
+			swal({
+				title: "Ups!",
+				text: "Something went wrong, did you use a valid email?",
+				type: "warning",
+				confirmButtonColor: "#68c3a3"
+			});
+		})
+		.success(function() {
+			swal({
+				title: "Message received!",
+				text: "Thank you for contacting me, I will answer you shortly!",
+				type: "success",
+				confirmButtonColor: "#68c3a3"
+			});
+		});
+		
 	})
 })();
