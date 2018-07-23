@@ -1,27 +1,9 @@
 {
   "name": "portfolio-site",
-  "version": "1.0.0",
-  "scripts": {
-    "scss": "node-sass --output-style compressed -o dist/styles src/css/base.scss",
-    "build:css": "npm run scss",
-    "watch:css": "onchange \"src/css/*.scss\" -- npm run build:css",
-    "build:js": "browserify ./src/js/scripts.js | uglifyjs -mc > ./dist/scripts/scripts.js",
-    "watch:js": "watchify ./src/js/scripts.js -o ./dist/scripts/scripts.js -v",
-    "build": "npm-run-all --parallel watch:css watch:js"
-  },
+  "version": "2.0.0",
+  "scripts": {},
   "devDependencies": {
-    "browserify": "^13.0.1",
-    "inview": "0.0.5",
-    "jquery": "^3.0.0",
-    "node-sass": "^3.7.0",
-    "npm-run-all": "^2.3.0",
-    "onchange": "^2.4.0",
-    "sweetalert": "^1.1.3",
-    "uglifyjs": "^2.4.10",
-    "vex-js": "^2.3.4",
-    "watch": "^0.18.0",
-    "watchify": "^3.7.0",
-    "waypoints": "^4.0.0",
-    "wowjs": "^1.1.3"
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.1.0"
   }
 }
